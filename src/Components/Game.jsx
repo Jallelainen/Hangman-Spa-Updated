@@ -24,7 +24,7 @@ export const Game = (props) => {
      Then it checks if the guess is already made. If not, the guess will be saved 
      If the guess wasn't already made, it checks if the updated hidden word matches the real word and if it does, gamestate will be set to 'won' 
      If the round exceeds ten iterations, gamestate will be set to 'lost' 
-     Hooks are updated last since they take more time and cant keep up with loop-iterations, input field is also cleared */
+     Hooks are updated last since they take more time and cant keep up with loop-iterations,  input field is also cleared */
     const handleInput = (guess) => {
         let updated = hiddenWord.toUpperCase();
         let rounds = round;
