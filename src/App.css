@@ -1,0 +1,263 @@
+/* ----- Colors ----- */
+:root {
+  --black-0: #1a1c1f;
+  --grey-0: #282828;
+  --grey-1: #515151;
+  --grey-2: #7c7b7b;
+  --grey-3: #a8a7a7;
+  --grey-4: #dddddd;
+  --grey-5: #f4f4f4;
+  --yellow-0: #d9c07d;
+  --yellow-1: #dac58e;
+  --yellow-2: #dccb9e;
+  --yellow-3: #ddd0af;
+  --yellow-4: #ded5bf;
+  --yellow-5: #eeddcc;
+  --blue-0: #1b3455;
+  --blue-1: #3c5e7e;
+  --blue-2: #5d87a6;
+  --blue-3: #7eb1cf;
+  --blue-4: #c5ecff;
+  --blue-5: #f3fcff;
+  --good: #c3deb5;
+  --good-hover: #9cad92;
+  --lagom: #d9c07d;
+  --lagom-hover: #b09454;
+  --bad: #e25050;
+  --bad-hover: #b64344;
+}
+
+/* ----- GENERICS ----- */
+html{
+  font-size: 16pt;
+}
+
+button{
+  border-radius: 4px;
+  border-width: 0px;
+  outline: none;
+  min-width: 15rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: 0 0.15rem 0.75rem var(--grey-2);
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: var(--lagom);
+}
+
+button:hover{
+  background-color: var(--lagom-hover);
+}
+
+input{
+  border-radius: 4px;
+  border-width: 0px;
+  outline: none;
+  min-width: 15rem;
+  min-height: 25px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: 0 0.15rem 0.75rem var(--grey-2);
+  transform: translateY(-3px);
+}
+
+li {
+  display: inline;
+  float: left;
+  margin-left: 2rem;
+}
+
+li:hover {
+  cursor: pointer;
+  color: var(--lagom-hover);
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ---- Animations ---- */
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(-1rem, -1rem); }
+  25% { transform: translate(1rem, -1rem); }
+  50% { transform: translate(-1rem, 1rem); }
+  75% { transform: translate(1rem, 1rem); }
+  100% { transform: translate(0rem, 0rem); }
+}
+
+@keyframes appearLeft {
+  0%{ transform: translateX(-15rem);}
+  25%{ transform: translateX(0rem);}
+  75%{ transform: translateX(0rem);}
+  100%{ transform: translateX(-20rem);}
+}
+
+@keyframes highligthTxt {
+  0%{
+    color: var(--bad-hover);
+  }
+}
+
+/* ---- CLasses ----- */
+.message-box{
+  background-color: var(--grey-5);
+  width: 20vw;
+  height: 5rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  animation: appearLeft 2050ms ease-in-out;
+}
+
+.App {
+  text-align: center;
+
+}
+
+.App-header {
+  background-color: var(--black-0);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  min-height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(2px + 2vmin);
+  color: var(--yellow-0);
+}
+
+.main-content{
+  min-height: 90vh;
+  color: var(--grey-1);
+  background-color: var(--blue-5);
+  margin-left: auto;
+  margin-right:auto; 
+  width: 100vw;
+}
+
+.main-content > h4 {
+  letter-spacing: 00.5rem;
+}
+
+.main-content > input{
+  text-align: center;
+}
+
+.footer{
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  color: var(--yellow-0);
+  background-color: var(--black-0);
+}
+
+.footer > h3, p{
+  font-size: 1rem;
+}
+
+.pos-button{
+  background-color: var(--good);
+}
+
+.pos-button:hover {
+  background-color: var(--good-hover);
+}
+
+.neg-button{
+  background-color: var(--bad);
+}
+
+.neg-button:hover {
+  background-color: var(--bad-hover);
+}
+
+.game-pic {
+  max-width: 12rem;
+  margin-left: auto;
+  margin-right:auto; 
+}
+
+.img-container {
+  min-height: 265px;
+  align-items: flex-end;
+  display: flex;
+}
+
+.centered-width{
+  max-width: 35vw;
+  margin-left: auto;
+  margin-right:auto; 
+}
+
+.spinner{
+  animation: 1.5s linear infinite spinner;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin: 110px;
+  margin-left: 0px;
+  position: relative;
+  left: 50vw;
+}
+
+/* ----- IDs ----- */
+
+#header-title {
+  text-align: left;
+  margin: 0.5rem;
+  margin-left: 2rem;
+  font-weight: 200;
+}
+
+#li-title{
+  text-decoration: none;
+  color: var(--lagom);
+  transform: translateY(2px);
+}
+
+#history{
+  max-width: 40vw;
+  margin-left: auto;
+  margin-right:auto; 
+}
+ 
+#hint{
+  outline: none;
+  background-color: transparent;
+  box-shadow: none;
+  min-width: 0px;
+  max-width: 5rem;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+#hint:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#outcome-word{
+  animation: shake 300ms;
+}
