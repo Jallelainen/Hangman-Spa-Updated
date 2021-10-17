@@ -95,7 +95,9 @@ export const Game = (props) => {
         <div className="main-content">
             <h2>Guess the Word</h2>
             <div className="img-container">
-                {!hiddenWord? <div className="spinner"></div> : round > 0 ? <img className="game-pic" src={gameImage} alt="Hangmans noose"/> : <div className="game-pic"></div>}
+                {!hiddenWord? <div className="spinner"></div> 
+                : round > 0 ? <img className="game-pic" src={gameImage} alt="Hangmans noose"/> 
+                : <div className="game-pic"></div>}
             </div>
             {hiddenWord? <h4 id="hidden-word">{hiddenWord}</h4> : <h3>Loading...</h3>}
             <p id="used-letters"><b>Used letters:</b> {guessedChars}</p>

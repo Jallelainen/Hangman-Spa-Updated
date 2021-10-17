@@ -122,7 +122,7 @@ ul {
   height: 5rem;
   padding: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-  position: fixed;
+  
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -212,7 +212,7 @@ ul {
 .spinner{
   animation: 1.5s linear infinite spinner;
   border: solid 5px #cfd0d1;
-  border-bottom-color: #1c87c9;
+  border-bottom-color: var(--lagom-hover);
   border-radius: 50%;
   height: 60px;
   width: 60px;
