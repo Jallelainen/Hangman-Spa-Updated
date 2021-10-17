@@ -10,7 +10,7 @@ export const Outcome = (props) => {
     return (
         <div className="main-content">
             {outcome === "won" ? <h2>Congratulations!</h2> : <h2>How unfortunate...</h2>}
-            <h3>You {outcome}!</h3>
+            <h3>You {outcome}! </h3>
             <div className="img-container">
                 <img className="game-pic" src={"../Pics/hangman" + outcome +".png"} alt="Hangmans noose outcome"/>
             </div>
