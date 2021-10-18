@@ -10,9 +10,10 @@ export const Game = (props) => {
     const [guessedChars, setGuessedChars] = useState([]);
     const [round, setRound] = useState(0);
     const [msgBox, setMsgBox] = useState(false);
+    const [guessChar, setGuessChar] = useState('');
 
     let gameImage = "../Pics/hangman" + round +".png";
-    let errorMsg = "Error! You have already guessed this letter.";
+    let errorMsg = "You have already guessed this letter: ";
     
 
     /* Api call: Fetch word */
@@ -29,6 +30,7 @@ export const Game = (props) => {
         let updated = hiddenWord.toUpperCase();
         let rounds = round;
         guess = guess.toUpperCase();
+        
          
         if (word) {
 
@@ -39,6 +41,7 @@ export const Game = (props) => {
                 
                 if (updated === hiddenWord) {
                     
+                    setGuessChar(guess);
                     rounds = handleWronglyGuessed(guess, rounds);
 
                 }else if (updated === word) { 
@@ -93,7 +96,7 @@ export const Game = (props) => {
 
     return (
         <div className="main-content">
-            {msgBox && (<div className="message-box" ><p>{errorMsg}</p> </div>)}
+            {msgBox && (<div className="message-box" ><p id="msg-text">{errorMsg + guessChar}</p> </div>)}
             <h2>Guess the Word</h2>
             <div className="img-container">
                 {!hiddenWord? <div className="spinner"></div> 
