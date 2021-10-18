@@ -207,9 +207,9 @@ ul {
 }
 
 .img-container {
-  min-height: 265px;
-  align-items: flex-end;
+  min-height: 345px;
   display: flex;
+  align-items: flex-end;
 }
 
 .centered-width{
