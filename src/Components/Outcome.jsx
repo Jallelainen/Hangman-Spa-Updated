@@ -5,7 +5,6 @@ export const Outcome = (props) => {
     const [outcome] = useState(props.gameState);
     const [word] = useState(props.word);
     const [guessed] = useState(props.guessed);
-    console.log(guessed);
 
     return (
         <div className="main-content">

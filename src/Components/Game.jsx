@@ -35,13 +35,10 @@ export const Game = (props) => {
         if (word) {
 
             if (rounds < 9) {
-                
                 updated = checkGuess(updated, guess);
                 
                 
                 if (updated === hiddenWord) {
-                    
-                    setGuessChar(guess);
                     rounds = handleWronglyGuessed(guess, rounds);
 
                 }else if (updated === word) { 
@@ -83,8 +80,10 @@ export const Game = (props) => {
             rounds++;
 
         }else{
+            setGuessChar(guess);
             toggleMsgBox(true);
-            setTimeout(() => { toggleMsgBox(false); }, 2000);
+            
+            msgBox? clearTimeout(setTimeout) : setTimeout(() => { toggleMsgBox(false); }, 2000);
         }
 
         return rounds;

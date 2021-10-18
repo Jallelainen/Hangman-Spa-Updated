@@ -129,7 +129,7 @@ ul {
 .message-box{
   background-color: var(--grey-5);
   position: fixed;
-  top: 20vh;
+  top: 15vh;
   right: 10vw;
   width: 20vw;
   height: 5rem;
