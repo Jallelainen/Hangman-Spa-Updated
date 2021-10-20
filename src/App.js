@@ -16,17 +16,41 @@ function App() {
   const [gameState, setGameState] = useState("start");
   const [word, setWord] = useState();
   const [guessed, setGuessed] = useState([]);
+  const [difficulty, setDifficulty] = useState();
+
 
   return (
     <div className="App">
       <header className="App-header">
         <Header setGameState={setGameState} />
           {
-            gameState === "start" ? <Start setGameState={setGameState}/> 
-            : gameState === "inProgress" ? <Game setGameState={setGameState} setWord={setWord} setGuessed={setGuessed} /> 
-            : gameState === "history" ? <History setGameState={setGameState}/> 
-            : gameState === "won" ? <Outcome gameState={gameState} setGameState={setGameState} word={word}/> 
-            : <Outcome gameState={gameState} setGameState={setGameState} word={word} guessed={guessed}/>
+            gameState === "start" ? 
+            <Start 
+            setGameState={setGameState} 
+            setDifficulty={setDifficulty}/> 
+
+            : gameState === "inProgress" ? 
+            <Game 
+            setGameState={setGameState} 
+            setWord={setWord} 
+            setGuessed={setGuessed}
+            difficulty={difficulty} /> 
+
+            : gameState === "history" ? 
+            <History setGameState={setGameState}/> 
+
+            : gameState === "won" ? 
+            <Outcome 
+            gameState={gameState} 
+            setGameState={setGameState} 
+            word={word}/> 
+
+            : 
+            <Outcome 
+            gameState={gameState} 
+            setGameState={setGameState} 
+            word={word} 
+            guessed={guessed}/>
           }
         <Footer />
       </header>

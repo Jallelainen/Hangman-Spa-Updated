@@ -79,6 +79,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -116,6 +118,17 @@ ul {
   100%{ 
     opacity: 0%;
     transform: translateX(20rem);
+  }
+}
+
+@keyframes appearTop {
+  0%{ 
+    opacity: 0%;
+    transform: translateY(-4rem);
+  }
+  100%{ 
+    opacity: 100%;
+    transform: translateY(0rem);
   }
 }
 
@@ -229,6 +242,24 @@ ul {
   margin-left: 0px;
   position: relative;
   left: 50vw;
+}
+
+.menu-container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ani-appearTop{
+  animation: appearTop 300ms ease-out;
+}
+
+.ani-dissappearTop{
+  transform: appearTop 200ms ease-out reverse;
 }
 
 /* ----- IDs ----- */

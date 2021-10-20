@@ -11,6 +11,7 @@ export const Game = (props) => {
     const [round, setRound] = useState(0);
     const [msgBox, setMsgBox] = useState(false);
     const [guessChar, setGuessChar] = useState('');
+    const [difficulty] = useState(props.difficulty);
 
     let gameImage = "../Pics/hangman" + round +".png";
     let errorMsg = "You have already guessed this letter: ";
@@ -18,8 +19,23 @@ export const Game = (props) => {
 
     /* Api call: Fetch word */
     useEffect(() => {
-        GameService.getWord(setWord, setHiddenWord, setHint);
-    }, []);
+        switch (difficulty) {
+            case "easy":
+                GameService.getEasyWord(setWord, setHiddenWord, setHint);
+                break;
+            case "moderate":
+                //404
+                break;
+                case "hard":
+                GameService.getHardWord(setWord, setHiddenWord, setHint);
+                break;
+        
+            default:
+                break;
+        }
+            
+        
+    }, [difficulty]);
     
     /* First it checks if maximum amount of tries is achieved, after which it checks if the guess matches the word
      Then it checks if the guess is already made. If not, the guess will be saved 
@@ -66,7 +82,7 @@ export const Game = (props) => {
         for (let i = 0; i < word?.length; i++) {
             if (word[i] === guess) {
                 updatedHidden = setCharAt(updatedHidden, i, guess); 
-            }     
+            };     
         };
 
         return updatedHidden;
