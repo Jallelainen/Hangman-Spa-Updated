@@ -4,27 +4,17 @@ import { useState } from 'react';
 export const Start = (props) => {
     const [showInfo, setShowInfo] = useState(false);
     const [howToPlayBtn, setHowToPlayBtn] = useState("How to Play?");
-    const [animation, setAnimation] = useState();
 
     const info = "The goal of the game is to guess the hidden word. You have 10 tries to guess the correct word. Already made guesses is not counted as a try. A hint will be available after 7 tries.";
 
     const toggleInfo = () => {
         if (showInfo === false) {
-            toggleAni("ani-appearTop");
             setShowInfo(true);
             setHowToPlayBtn("Close");
         }else{
-            //setAnimation("ani-disappearTop");
-            toggleAni("ani-dissappearTop");
-            setTimeout(() => {
-                setShowInfo(false);
-                setHowToPlayBtn("How to Play?");
-            }, 200)
+            setShowInfo(false);
+            setHowToPlayBtn("How to Play?");
         }
-    };
-
-    const toggleAni = (className) => {
-        setAnimation(className);
     };
  
     const setDifficulty = (diff) => {
@@ -40,12 +30,12 @@ export const Start = (props) => {
                 <button className="pos-button" onClick={() => setDifficulty("easy")}>Generate Easy Word</button>
                 <button className="neg-button" onClick={() => setDifficulty("hard")}>Generate Hard Word</button>
                 {showInfo && (
-                    <div className={animation}>
+                    <div className="ani-appearTop">
                         <h3>How to play</h3>
                         <p>{info}</p>
                     </div>
                     )}
-                <button className={animation} onClick={() => toggleInfo()}>{howToPlayBtn}</button>
+                <button onClick={() => toggleInfo()}>{howToPlayBtn}</button>
             </div>
         </div>
     )

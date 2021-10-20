@@ -126,6 +126,7 @@ ul {
     opacity: 0%;
     transform: translateY(-4rem);
   }
+  50% { opacity: 0%; }
   100%{ 
     opacity: 100%;
     transform: translateY(0rem);
