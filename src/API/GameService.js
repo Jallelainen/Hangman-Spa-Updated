@@ -3,14 +3,7 @@ import axios from 'axios';
 class GameService {
     /* API get request that fetches the word, then assigns word, hint and hidden word to hooks */
     async getEasyWord(setWord, setHiddenWord, setHint){
-        var config = { 
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            }
-        };
-
+        
         return await axios
             .get("https://random-word-api.herokuapp.com/word?number=1")
             .then((response) => {
