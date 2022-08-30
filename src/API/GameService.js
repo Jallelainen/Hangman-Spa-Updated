@@ -12,7 +12,7 @@ class GameService {
         };
 
         return await axios
-            .get("https://cors-anywhere.herokuapp.com/https://random-word-api.herokuapp.com/word?number=1", config)
+            .get("https://random-word-api.herokuapp.com/word?number=1")
             .then((response) => {
                 console.log(response);
                 setHiddenWord("_".repeat(response.data[0].length));
